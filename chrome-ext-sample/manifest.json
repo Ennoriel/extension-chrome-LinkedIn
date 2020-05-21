@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "LinkedIn Extention",
+    "description": "This extension lets you access privately stored data from a profile LinkedIn",
+    "version": "1.0",
+    "icons": {
+        "16": "light_bulb.png",
+        "48": "light_bulb.png",
+       "128": "light_bulb.png"
+    },
+    "browser_action": {
+        "default_icon": "light_bulb.png",
+        "default_popup": "popup.html",
+        "default_title": "ChromiePop"
+    },
+    "background": {
+        "scripts": ["scripts/background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "all_frames": true,
+        "js": ["scripts/jquery.min.js", "scripts/content.js"]
+    }],
+    "permissions": [
+        "activeTab"
+    ],
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                  "default": "Alt+W"
+                }
+        }
+    }
+}
+

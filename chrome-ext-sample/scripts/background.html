@@ -1,0 +1,28 @@
+<script>
+    var candidatesStore;
+    chrome.runtime.onMessage.addListener(function(candidates, sender, sendResponse){
+    if(message.method == 'setCandidates')
+    {
+        candidatesStore = candidates
+    }
+    else if(message.method == 'getCandidates')
+        sendResponse(candidatesStore);
+    });
+
+
+    // setTimeout(function(){ 
+        
+    //     var name = $("h1.searchable").text();
+    //     const parsedName = name.split(" ")
+    //     const firstName = parsedName[0];
+    //     const lastName = parsedName[parsedName.length - 1];
+    //     console.log(name)
+    //     fetch('http://localhost:3042/' + firstName)
+    //         .then(firstName => firstName.json())
+    //         .then(firstName => {
+    //         console.log(firstName);
+    //         chrome.runtime.sendMessage({method:'setTitle',title:firstName});
+    //     });
+
+    //  }, 1000);
+</script>
